@@ -1,4 +1,4 @@
-import { producto, type productoAttributes, type productoCreationAttributes } from "./producto.js";
+import { producto, type productoAttributes, type productoCreationAttributes } from "../models/init-models.js";
 import { Op } from 'sequelize';
 
 export const getAllProductos = async () => {
@@ -35,10 +35,7 @@ export const createProducto = async (productoData: productoCreationAttributes) =
 };
 
 export const updateProducto = async (id: number, productoData: Partial<productoAttributes>) => {
-    const [updated] = await producto.update(productoData, {
-        where: { id }
-    });
-    return updated;
+    return await producto.update(productoData, { where: { id } });
 };
 
 export const deleteProducto = async (id: number) => {

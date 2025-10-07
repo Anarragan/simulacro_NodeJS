@@ -16,19 +16,10 @@ export const createUsuario = async (usuarioData: usuarioCreationAttributes) => {
 };
 
 export const updateUsuario = async (id: number, usuarioData: Partial<usuarioAttributes>) => {
-  const [updatedRows] = await usuario.update(usuarioData, { where: { id } });
-    if (updatedRows === 0) {
-      throw new Error("Usuario not found or no changes made");
-    }
-    const updatedUsuario = await usuario.findByPk(id);
-    return updatedUsuario;
+  return await usuario.update(usuarioData, { where: { id } });
 };
 
 export const deleteUsuario = async (id: number) => {
-    const deletedRows = await usuario.destroy({ where: { id } });
-    if (deletedRows === 0) {
-      throw new Error("Usuario not found");
-    }
-    return deletedRows;
-  }
+    return await usuario.destroy({ where: { id } });
+};
 

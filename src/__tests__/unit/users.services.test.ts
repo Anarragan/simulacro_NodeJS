@@ -60,8 +60,7 @@ describe ('Users Services', () => {
     const result = await updateUsuario(1, mockUser);
 
     expect(mockUsuario.update).toHaveBeenCalledWith(mockUser, { where: { id: 1 } });
-    expect(mockUsuario.findByPk).toHaveBeenCalledWith(1);
-    expect(result).toEqual(mockUser);
+    expect(result).toEqual([1]);
   });
 
   it ('should delete user', async () => {
