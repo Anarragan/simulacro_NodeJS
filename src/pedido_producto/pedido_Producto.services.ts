@@ -1,5 +1,5 @@
 import { fn, literal } from "sequelize";
-import { pedido_producto, type pedido_productoAttributes, type pedido_productoCreationAttributes } from "./pedido_producto.js";
+import { pedido_producto, type pedido_productoAttributes, type pedido_productoCreationAttributes } from "../models/init-models.js";
 import { producto } from "../producto/producto.js";
 
 export const createPedidoProducto = async (data: pedido_productoCreationAttributes) => {

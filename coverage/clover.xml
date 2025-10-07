@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759852870972" clover="3.2.0">
-  <project timestamp="1759852870973" name="All files">
-    <metrics statements="70" coveredstatements="65" conditionals="12" coveredconditionals="11" methods="11" coveredmethods="11" elements="93" coveredelements="87" complexity="0" loc="70" ncloc="70" packages="2" files="2" classes="2"/>
+<coverage generated="1759855069254" clover="3.2.0">
+  <project timestamp="1759855069254" name="All files">
+    <metrics statements="104" coveredstatements="96" conditionals="17" coveredconditionals="14" methods="14" coveredmethods="14" elements="135" coveredelements="124" complexity="0" loc="104" ncloc="104" packages="3" files="3" classes="3"/>
+    <package name="pedido_producto">
+      <metrics statements="34" coveredstatements="31" conditionals="5" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="pedido_Producto.services.ts" path="/home/anarragan/Documentos/simulacro_NodeJS/src/pedido_producto/pedido_Producto.services.ts">
+        <metrics statements="34" coveredstatements="31" conditionals="5" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="producto">
       <metrics statements="46" coveredstatements="41" conditionals="7" coveredconditionals="6" methods="6" coveredmethods="6"/>
       <file name="producto.services.ts" path="/home/anarragan/Documentos/simulacro_NodeJS/src/producto/producto.services.ts">
