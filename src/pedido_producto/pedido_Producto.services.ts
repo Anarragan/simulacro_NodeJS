@@ -1,5 +1,6 @@
-import { Op, fn, col } from "sequelize";
+import { fn, literal } from "sequelize";
 import { pedido_producto, type pedido_productoAttributes, type pedido_productoCreationAttributes } from "./pedido_producto.js";
+import { producto } from "../producto/producto.js";
 
 export const createPedidoProducto = async (data: pedido_productoCreationAttributes) => {
     const newPedidoProducto = await pedido_producto.create(data);
@@ -12,17 +13,23 @@ export const getPedidoById = async (pedido_id: number): Promise<pedido_productoA
 
 export const getPriceByPedidoId = async (pedido_id: number): Promise<number> => {
     try {
-        const result = await pedido_producto.findAll({
-            attributes: [[fn("SUM", col("precio")), "total"]],
+        const result = await pedido_producto.findOne({
+            attributes: [
+                [fn("SUM", literal('"pedido_producto"."cantidad" * "producto"."precio"')), "total"]
+            ],
             where: { pedido_id },
-        });
-        const total = result[0]?.get("total") as number | null;
-        return total || 0;
+            include: [{
+                model: producto,
+                as: "producto",
+                attributes: [],
+            }],
+            raw: true,
+        }) as any;
+        const total = result?.total ? Number(result.total) : 0;
+        return total;
     } catch (error) {
         console.error("Error calculating total price for pedido_id:", pedido_id, error);
         throw error;
     }
 };
-
-
 

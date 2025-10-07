@@ -21,8 +21,6 @@ export class pedido extends Model<pedidoAttributes, pedidoCreationAttributes> im
   declare estado: string;
   declare usuario_id: number;
 
-
-
   // pedido hasMany pedido_producto via pedido_id
   pedido_productos!: pedido_producto[];
   getPedido_productos!: Sequelize.HasManyGetAssociationsMixin<pedido_producto>;
