@@ -19,7 +19,13 @@ describe('Pedido Services', () => {
     });
 
     it('should create pedido', async () => {
-        const mockPedidoData = { id: 1, estado: 'pendiente', fecha: new Date() };
+        const mockPedidoData = { 
+            id: 1, 
+            estado: 'pendiente', 
+            fecha: new Date(),
+            usuario_id: 1
+        };
+
         mockPedido.create.mockResolvedValue(mockPedidoData);
 
         const result = await createPedido(mockPedidoData);
@@ -39,6 +45,33 @@ describe('Pedido Services', () => {
 
         expect(mockPedido.findAll).toHaveBeenCalled();
         expect(result).toEqual(mockPedidos);
+    });
+
+    it('should get pedido by id', async () => {
+        const mockPedidoData = { id: 1, estado: 'pendiente', fecha: new Date() };
+        mockPedido.findByPk.mockResolvedValue(mockPedidoData);
+
+        const result = await getPedidoById(1);
+
+        expect(mockPedido.findByPk).toHaveBeenCalledWith(1);
+        expect(result).toEqual(mockPedidoData);
+    });
+    
+    it('should get pedidos by fecha', async () => {
+        const mockPedidoData = { id: 1, estado: 'pendiente', fecha: new Date() };
+        mockPedido.findAll.mockResolvedValue([mockPedidoData]);
+
+        const testDate = new Date('2023-01-01');
+        const result = await getPedidosByFecha(testDate);
+
+        expect(mockPedido.findAll).toHaveBeenCalledWith({
+            where: {
+                fecha: {
+                    [Op.gt]: testDate.toISOString()
+                }
+            }
+        });
+        expect(result).toEqual([mockPedidoData]);
     });
 
     it('should get pedido by estado', async () => {

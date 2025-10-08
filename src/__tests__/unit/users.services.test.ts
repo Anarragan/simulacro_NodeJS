@@ -7,9 +7,15 @@ const mockUsuario: any = {
   update: jest.fn(),
   destroy: jest.fn()
 };
-
+/*
 jest.unstable_mockModule("../../models/init-models.js", () => ({
   usuario: mockUsuario
+}));*/
+
+jest.unstable_mockModule("../../config/dataBase.config.js", () => ({
+  models: {
+    usuario: mockUsuario
+  }
 }));
 
 const { createUsuario, getAllUsuarios, getUsuarioById, updateUsuario, deleteUsuario } = await import("../../usuario/usuario.services.js");

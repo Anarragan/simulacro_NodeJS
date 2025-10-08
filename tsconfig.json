@@ -45,6 +45,6 @@
     "dist",
     "**/*.test.ts",
     "**/__tests__/*",
-    "jest.config.cjs"
+    "jest.config.js"
   ]
 }

@@ -1,5 +1,8 @@
 import { Sequelize } from "sequelize";
 import 'dotenv/config';
+import { initModels } from "../models/init-models.js";
+
+const isTest = process.env.NODE_ENV === 'test';
 
 export const sequelize = new Sequelize({
     database: process.env.DB_NAME || '',
@@ -11,12 +14,18 @@ export const sequelize = new Sequelize({
     logging: false,
 });
 
+export const models = initModels(sequelize);
+
 export async function connectDB() {
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
+        initModels(sequelize);
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
 }
 
+if (isTest) {
+  connectDB();
+}

@@ -1,5 +1,4 @@
-/** @type {import('jest').Config} */
-module.exports = {
+export default {
   // Modo CommonJS para permitir jest.mock tradicional y imports estáticos
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
@@ -11,6 +10,7 @@ module.exports = {
   coverageProvider: 'v8',
   testMatch: ['**/__tests__/**/*.test.ts'],
   moduleFileExtensions: ['ts','js','json'],
+  setupFiles: ['<rootDir>/src/__tests__/jest.setup.ts'],
 
   transform: {
     '^.+\\.ts$': [
@@ -20,6 +20,7 @@ module.exports = {
       },
     ],
   },
+
   // mapear import con .js para jest encuentre el .ts real
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',

@@ -4,7 +4,7 @@ import {router as productoRouter} from './producto/producto.routes.js';
 import {router as pedidoRouter } from './pedido/pedido.routes.js';
 import pedidoProductoRouter from './pedido_producto/pedido_producto.routes.js';
 
-export const createApp = async () => {
+export const createApp = async (): Promise<express.Express> => {
     const app = express();
     app.use(express.json());
     app.use("/usuario", router);

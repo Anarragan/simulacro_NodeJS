@@ -1,4 +1,7 @@
-import { usuario, type usuarioCreationAttributes, type usuarioAttributes } from "../models/init-models.js";
+import { models } from "../config/dataBase.config.js";
+import type { usuarioCreationAttributes } from "./usuario.js";
+import type { usuarioAttributes } from "../models/init-models.js";
+const { usuario } = models;
 
 export const getAllUsuarios = async () => {
   const usuarios = await usuario.findAll();

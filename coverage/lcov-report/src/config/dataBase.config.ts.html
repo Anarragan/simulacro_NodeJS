@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for usuario/usuario.services.ts</title>
+    <title>Code coverage report for src/config/dataBase.config.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">usuario</a> usuario.services.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/config</a> dataBase.config.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>29/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>29/31</span>
             </div>
         
             
@@ -88,7 +88,13 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -112,32 +118,44 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { usuario, type usuarioCreationAttributes, type usuarioAttributes } from "../models/init-models.js";
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Sequelize } from "sequelize";
+import 'dotenv/config';
+import { initModels } from "../models/init-models.js";
 &nbsp;
-export const getAllUsuarios = async () =&gt; {
-  const usuarios = await usuario.findAll();
-  return usuarios;
-};
+const isTest = process.env.NODE_ENV === 'test';
 &nbsp;
-export const getUsuarioById = async (id: number) =&gt; {
-  const usuarioData = await usuario.findByPk(id);
-  return usuarioData;
-};
+export const sequelize = new Sequelize({
+    database: process.env.DB_NAME<span class="branch-0 cbranch-no" title="branch not covered" > || '',</span>
+    username: process.env.DB_USER<span class="branch-0 cbranch-no" title="branch not covered" > || '',</span>
+    password: process.env.DB_PASSWORD<span class="branch-0 cbranch-no" title="branch not covered" > || '',</span>
+    host: process.env.DB_HOST<span class="branch-0 cbranch-no" title="branch not covered" > || '',</span>
+    port: Number(process.env.DB_PORT)<span class="branch-0 cbranch-no" title="branch not covered" > || 5432,</span>
+    dialect: 'postgres',
+    logging: false,
+});
 &nbsp;
-export const createUsuario = async (usuarioData: usuarioCreationAttributes) =&gt; {
-  const newUsuario = await usuario.create(usuarioData);
-  return newUsuario;
-};
+export const models = initModels(sequelize);
 &nbsp;
-export const updateUsuario = async (id: number, usuarioData: Partial&lt;usuarioAttributes&gt;) =&gt; {
-  return await usuario.update(usuarioData, { where: { id } });
-};
+export async function connectDB() {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+        initModels(sequelize);
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('Unable to connect to the database:', error);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+}
 &nbsp;
-export const deleteUsuario = async (id: number) =&gt; {
-    return await usuario.destroy({ where: { id } });
-};
-&nbsp;
+if (isTest) {
+  connectDB();
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -145,16 +163,16 @@ export const deleteUsuario = async (id: number) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-08T15:03:50.870Z
+                at 2025-10-08T18:42:36.116Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
