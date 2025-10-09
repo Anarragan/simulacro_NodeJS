@@ -19,7 +19,10 @@ export const createUsuario = async (usuarioData: usuarioCreationAttributes) => {
 };
 
 export const updateUsuario = async (id: number, usuarioData: Partial<usuarioAttributes>) => {
-  return await usuario.update(usuarioData, { where: { id } });
+  return await usuario.update(usuarioData, { 
+    where: { id },
+    returning: true
+  });
 };
 
 export const deleteUsuario = async (id: number) => {

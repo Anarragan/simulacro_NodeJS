@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize';
-import { DataTypes, Model, type Optional } from 'sequelize';
+import { DataTypes, Model } from 'sequelize';
 import type { pedido, pedidoId } from '../pedido/pedido.js';
 import type { producto, productoId } from '../producto/producto.js';
 
@@ -15,10 +15,10 @@ export type pedido_productoId = pedido_producto[pedido_productoPk];
 export type pedido_productoCreationAttributes = pedido_productoAttributes;
 
 export class pedido_producto extends Model<pedido_productoAttributes, pedido_productoCreationAttributes> implements pedido_productoAttributes {
-  id!: number;
-  pedido_id!: number;
-  producto_id!: number;
-  cantidad!: number;
+  declare id: number;
+  declare pedido_id: number;
+  declare producto_id: number;
+  declare cantidad: number;
 
   // pedido_producto belongsTo pedido via pedido_id
   pedido!: pedido;

@@ -18,7 +18,7 @@ jest.unstable_mockModule("../../producto/producto.js", () => ({
   producto: mockProducto
 }));
 
-const { createPedidoProducto, getPedidoById, getPriceByPedidoId } = await import("../../pedido_producto/pedido_Producto.services.js");
+const { createPedidoProducto, getPedidoProductoByPedidoId, getPriceByPedidoId } = await import("../../pedido_producto/pedido_Producto.services.js");
 
 describe('Pedido_Producto Services', () => {
   beforeEach(() => {
@@ -42,21 +42,21 @@ describe('Pedido_Producto Services', () => {
     ];
     mockPedidoProducto.findAll.mockResolvedValue(mockPedidoProductos);
 
-    const result = await getPedidoById(1);
+    const result = await getPedidoProductoByPedidoId(1);
 
     expect(mockPedidoProducto.findAll).toHaveBeenCalledWith({ where: { pedido_id: 1 } });
     expect(result).toEqual(mockPedidoProductos);
   });
 
   it('should get total price by pedido_id', async () => {
-    const mockTotal = { total: '500' };
-    mockPedidoProducto.findOne.mockResolvedValue(mockTotal);
+    const mockTotal = [{ total: '500' }];
+    mockPedidoProducto.findAll.mockResolvedValue(mockTotal);
 
     const result = await getPriceByPedidoId(1);
 
     // Llamado básico
-    expect(mockPedidoProducto.findOne).toHaveBeenCalledTimes(1);
-    const callArg = mockPedidoProducto.findOne.mock.calls[0][0];
+    expect(mockPedidoProducto.findAll).toHaveBeenCalledTimes(1);
+    const callArg = mockPedidoProducto.findAll.mock.calls[0][0];
 
     // Verificaciones parciales sin acoplar a la representación interna de Sequelize.fn
     expect(callArg.where).toEqual({ pedido_id: 1 });

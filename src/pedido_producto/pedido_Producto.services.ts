@@ -7,13 +7,13 @@ export const createPedidoProducto = async (data: pedido_productoCreationAttribut
     return newPedidoProducto;
 };
 
-export const getPedidoById = async (pedido_id: number): Promise<pedido_productoAttributes[] | null> => {
-    return pedido_producto.findAll({ where: { pedido_id: pedido_id } });
-}
+export const getPedidoProductoByPedidoId = async (pedido_id: number): Promise<pedido_productoAttributes[] | null> => {
+    return await pedido_producto.findAll({ where: { pedido_id: pedido_id } });
+}; 
 
 export const getPriceByPedidoId = async (pedido_id: number): Promise<number> => {
     try {
-        const result = await pedido_producto.findOne({
+        const result = await pedido_producto.findAll({
             attributes: [
                 [fn("SUM", literal('"pedido_producto"."cantidad" * "producto"."precio"')), "total"]
             ],
@@ -25,7 +25,7 @@ export const getPriceByPedidoId = async (pedido_id: number): Promise<number> => 
             }],
             raw: true,
         }) as any;
-        const total = result?.total ? Number(result.total) : 0;
+        const total = result?.[0]?.total ? Number(result[0].total) : 0;
         return total;
     } catch (error) {
         console.error("Error calculating total price for pedido_id:", pedido_id, error);

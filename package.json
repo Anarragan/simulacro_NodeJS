@@ -7,14 +7,15 @@
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
     "start": "NODE_ENV=production node ./dist/server.js",
-    "test": "NODE_ENV=development NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
-    "test:watch": "NODE_ENV=development NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --runInBand src/__tests__/unit",
     "test:coverage": "NODE_ENV=development NODE_OPTIONS=--experimental-vm-modules jest --coverage",
-    "test:integration": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest src/__tests__/integration --runInBand --detectOpenHandles --forceExit",
+    "test:integration": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --runInBand src/__tests__/integration --detectOpenHandles --forceExit",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down -v",
     "db:restart": "npm run db:down && npm run db:up"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anarragan/simulacro_NodeJS.git"

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.04% </span>
+                <span class="strong">25.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/84</span>
+                <span class='fraction'>22/85</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.04% </span>
+                <span class="strong">25.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/84</span>
+                <span class='fraction'>22/85</span>
             </div>
         
             
@@ -147,7 +147,8 @@
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -199,14 +200,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -282,15 +284,16 @@ export const fetchPedidosByFecha = <span class="fstat-no" title="function not co
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const createNewPedido = <span class="fstat-no" title="function not covered" >async (req: Request, res: Response) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const pedidoData = req.body;</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        const newPedido = await createPedido(pedidoData);</span>
-<span class="cstat-no" title="statement not covered" >        res.status(201).json(newPedido);</span>
-<span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
+export const createNewPedido = async (req: Request, res: Response) =&gt; {
+    const pedidoData = req.body;
+    try {
+        const newPedido = await createPedido(pedidoData);
+        res.status(201).json(newPedido);
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error("Error creating pedido:", error);</span>
 <span class="cstat-no" title="statement not covered" >        res.status(500).json({ error: (error instanceof Error ? error.message : String(error)) });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;
 export const updateExistingPedido = <span class="fstat-no" title="function not covered" >async (req: Request, res: Response) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const { id } = req.params;</span>
@@ -322,7 +325,7 @@ export const deleteExistingPedido = <span class="fstat-no" title="function not c
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-08T18:42:36.116Z
+                at 2025-10-09T18:52:34.819Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

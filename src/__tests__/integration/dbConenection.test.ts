@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Carga el .env.test
-dotenv.config({ path: path.resolve(__dirname, '../.env.test') });
+dotenv.config({ path: path.resolve(__dirname, '../../../.env.test') });
 
 describe('Database connection (integration)', () => {
   console.log({
@@ -29,6 +29,8 @@ describe('Database connection (integration)', () => {
       database: process.env.DB_NAME,
       logging: false,
     });
+    console.log('Connecting to DB:', process.env.DB_HOST, process.env.DB_PORT);
+
 
     await sequelize.authenticate();
   });

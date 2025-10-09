@@ -50,11 +50,11 @@ export const updateExistingProducto = async (req: Request, res: Response) => {
     const { id } = req.params;
     const productoData = req.body;
     try {
-        const updatedProducto = await updateProducto(Number(id), productoData);
-        if (!updatedProducto) {
+        const [updatedCount, updatedProducto] = await updateProducto(Number(id), productoData);
+        if (updatedCount === 0) {
             return res.status(404).json({ error: "Producto not found" });
         }
-        res.status(200).json(updatedProducto);
+        res.status(200).json(updatedProducto[0]);
     } catch (error) {
         res.status(500).json({ error: (error instanceof Error ? error.message : String(error)) });
     }

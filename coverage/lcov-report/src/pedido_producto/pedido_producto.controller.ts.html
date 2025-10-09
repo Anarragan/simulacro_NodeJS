@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.05% </span>
+                <span class="strong">71.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/38</span>
+                <span class='fraction'>28/39</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">42.85% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.05% </span>
+                <span class="strong">71.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/38</span>
+                <span class='fraction'>28/39</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,31 +101,27 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -133,50 +129,57 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { Response, Request } from "express";
-import { createPedidoProducto, getPedidoById, getPriceByPedidoId } from "./pedido_Producto.services.js";
+import { createPedidoProducto, getPedidoProductoByPedidoId, getPriceByPedidoId } from "./pedido_Producto.services.js";
 &nbsp;
-export const addProductoToPedido = <span class="fstat-no" title="function not covered" >async (req: Request, res: Response) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        const dataProductoPedido = req.body;</span>
-<span class="cstat-no" title="statement not covered" >        const newPedidoProducto = await createPedidoProducto(dataProductoPedido);</span>
-<span class="cstat-no" title="statement not covered" >        res.status(201).json(newPedidoProducto);</span>
-<span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
+export const addProductoToPedido = async (req: Request, res: Response) =&gt; {
+    try {
+        const dataProductoPedido = req.body;
+        const newPedidoProducto = await createPedidoProducto(dataProductoPedido);
+        res.status(201).json(newPedidoProducto);
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >        console.error("addProductoToPedido error:", error);</span>
 <span class="cstat-no" title="statement not covered" >        res.status(500).json({ error: "Error al agregar producto al pedido" });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-export const getProductoPedido = <span class="fstat-no" title="function not covered" >async (req: Request, res: Response) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        const { id } = req.params;</span>
-<span class="cstat-no" title="statement not covered" >        const productoPedido = await getPedidoById(Number(id));</span>
-<span class="cstat-no" title="statement not covered" >        if (!productoPedido) {</span>
-<span class="cstat-no" title="statement not covered" >            return res.status(404).json({ error: "Producto en pedido no encontrado" });</span>
+export const getProductoPedidoByPedidoId = async (req: Request, res: Response) =&gt; {
+    try {
+        const id = Number(req.params.id);
+        console.log("Fetching producto pedido for pedido_id:", id);
+        const productoPedido = await getPedidoProductoByPedidoId(id);
+        if (!productoPedido) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            return res.status(404).json({ error: "PedidoProducto no encontrado" });</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        res.json(productoPedido);</span>
-<span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
+        res.json(productoPedido);
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >        console.error("getProductoPedido error:", error);</span>
 <span class="cstat-no" title="statement not covered" >        res.status(500).json({ error: "Error al obtener el producto del pedido" });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-export const getTotalPriceForPedido = <span class="fstat-no" title="function not covered" >async (req: Request, res: Response) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        const { id } = req.params;</span>
-<span class="cstat-no" title="statement not covered" >        const totalPrice = await getPriceByPedidoId(Number(id));</span>
-<span class="cstat-no" title="statement not covered" >        res.json({ total: totalPrice });</span>
-<span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
+export const getTotalPriceForPedido = async (req: Request, res: Response) =&gt; {
+    try {
+        const { id } = req.params;
+        const totalPrice = await getPriceByPedidoId(Number(id));
+        res.json({ total: totalPrice });
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >        console.error("getTotalPriceForPedido error:", error);</span>
 <span class="cstat-no" title="statement not covered" >        res.status(500).json({ error: "Error al calcular el precio total del pedido" });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -184,7 +187,7 @@ export const getTotalPriceForPedido = <span class="fstat-no" title="function not
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-08T18:42:36.116Z
+                at 2025-10-09T18:52:34.819Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

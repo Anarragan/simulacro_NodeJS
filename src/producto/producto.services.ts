@@ -35,7 +35,10 @@ export const createProducto = async (productoData: productoCreationAttributes) =
 };
 
 export const updateProducto = async (id: number, productoData: Partial<productoAttributes>) => {
-    return await producto.update(productoData, { where: { id } });
+    return await producto.update(productoData, { 
+      where: { id },
+      returning: true
+    });
 };
 
 export const deleteProducto = async (id: number) => {

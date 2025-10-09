@@ -61,12 +61,12 @@ describe ('Users Services', () => {
 
   it ('should update user', async () => {
     const mockUser = { id: 1, nombre: 'John Doe', email: 'doe@example.com' };
-    mockUsuario.update.mockResolvedValue([1]);
+    mockUsuario.update.mockResolvedValue([1, [mockUser]]);
 
     const result = await updateUsuario(1, mockUser);
 
-    expect(mockUsuario.update).toHaveBeenCalledWith(mockUser, { where: { id: 1 } });
-    expect(result).toEqual([1]);
+    expect(mockUsuario.update).toHaveBeenCalledWith(mockUser, { where: { id: 1 }, returning: true });
+    expect(result).toEqual([1, [mockUser]]);
   });
 
   it ('should delete user', async () => {

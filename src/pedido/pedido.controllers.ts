@@ -55,6 +55,7 @@ export const createNewPedido = async (req: Request, res: Response) => {
         const newPedido = await createPedido(pedidoData);
         res.status(201).json(newPedido);
     } catch (error) {
+        console.error("Error creating pedido:", error);
         res.status(500).json({ error: (error instanceof Error ? error.message : String(error)) });
     }
 }

@@ -1,5 +1,5 @@
 import type { Response, Request } from "express";
-import { createPedidoProducto, getPedidoById, getPriceByPedidoId } from "./pedido_Producto.services.js";
+import { createPedidoProducto, getPedidoProductoByPedidoId, getPriceByPedidoId } from "./pedido_Producto.services.js";
 
 export const addProductoToPedido = async (req: Request, res: Response) => {
     try {
@@ -12,12 +12,13 @@ export const addProductoToPedido = async (req: Request, res: Response) => {
     }
 };
 
-export const getProductoPedido = async (req: Request, res: Response) => {
+export const getProductoPedidoByPedidoId = async (req: Request, res: Response) => {
     try {
-        const { id } = req.params;
-        const productoPedido = await getPedidoById(Number(id));
+        const id = Number(req.params.id);
+        console.log("Fetching producto pedido for pedido_id:", id);
+        const productoPedido = await getPedidoProductoByPedidoId(id);
         if (!productoPedido) {
-            return res.status(404).json({ error: "Producto en pedido no encontrado" });
+            return res.status(404).json({ error: "PedidoProducto no encontrado" });
         }
         res.json(productoPedido);
     } catch (error) {

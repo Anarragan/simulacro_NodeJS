@@ -37,10 +37,12 @@ export const updateExistingUsuario = async (req: Request, res: Response) => {
     const { id } = req.params;
     const usuarioData = req.body;
     try {
-        const updatedUsuario = await updateUsuario(Number(id), usuarioData);
-        if (!updatedUsuario) {
+        const [updatedCount, updatedRows] = await updateUsuario(Number(id), usuarioData);
+        if (updatedCount === 0) {
             return res.status(404).json({ error: "Usuario not found" });
         }
+
+        const updatedUsuario = updatedRows[0];
         res.status(200).json(updatedUsuario);
     } catch (error) {
         res.status(500).json({ error: (error instanceof Error ? error.message : String(error)) });

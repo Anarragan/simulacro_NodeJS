@@ -75,12 +75,12 @@ describe('Producto Services', () => {
 
     it('should update producto', async () => {
         const mockProduct = { id: 1, nombre: 'Producto 1', categoria: 'Categoria A', precio: 100 };
-        mockProducto.update.mockResolvedValue([1]);
+        mockProducto.update.mockResolvedValue([1, [mockProduct]]);
 
         const result = await updateProducto(1, mockProduct);    
 
-        expect(mockProducto.update).toHaveBeenCalledWith(mockProduct, { where: { id: 1 } });
-        expect(result).toEqual([1]);
+        expect(mockProducto.update).toHaveBeenCalledWith(mockProduct, { where: { id: 1 }, returning: true });
+        expect(result).toEqual([1, [mockProduct]]);
     });
 
     it('should delete producto', async () => {
