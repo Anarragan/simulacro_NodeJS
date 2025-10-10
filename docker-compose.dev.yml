@@ -4,9 +4,9 @@ services:
     container_name: postgres_test_db
     restart: always
     environment:
-      POSTGRES_USER: anarragan
-      POSTGRES_PASSWORD: 1006457424Aa!
-      POSTGRES_DB: test_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - "5433:5432" # el puerto 5433 es local, 5432 dentro del contenedor
     volumes:

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>82/82</span>
+                <span class='fraction'>62/82</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>82/82</span>
+                <span class='fraction'>62/82</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -162,25 +162,25 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -226,7 +226,7 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Sequelize from 'sequelize';
 import { DataTypes, Model, type Optional } from 'sequelize';
 import type { pedido, pedidoId } from '../pedido/pedido.js';
@@ -243,26 +243,26 @@ export type usuarioId = usuario[usuarioPk];
 export type usuarioOptionalAttributes = "rol";
 export type usuarioCreationAttributes = Optional&lt;usuarioAttributes, usuarioOptionalAttributes&gt;;
 &nbsp;
-export class usuario extends Model&lt;usuarioAttributes, usuarioCreationAttributes&gt; implements usuarioAttributes {
-  declare id: number;
-  declare nombre: string;
-  declare email: string;
-  declare rol: string;
-&nbsp;
-  // usuario hasMany pedido via usuario_id
-  pedidos!: pedido[];
-  getPedidos!: Sequelize.HasManyGetAssociationsMixin&lt;pedido&gt;;
-  setPedidos!: Sequelize.HasManySetAssociationsMixin&lt;pedido, pedidoId&gt;;
-  addPedido!: Sequelize.HasManyAddAssociationMixin&lt;pedido, pedidoId&gt;;
-  addPedidos!: Sequelize.HasManyAddAssociationsMixin&lt;pedido, pedidoId&gt;;
-  createPedido!: Sequelize.HasManyCreateAssociationMixin&lt;pedido&gt;;
-  removePedido!: Sequelize.HasManyRemoveAssociationMixin&lt;pedido, pedidoId&gt;;
-  removePedidos!: Sequelize.HasManyRemoveAssociationsMixin&lt;pedido, pedidoId&gt;;
-  hasPedido!: Sequelize.HasManyHasAssociationMixin&lt;pedido, pedidoId&gt;;
-  hasPedidos!: Sequelize.HasManyHasAssociationsMixin&lt;pedido, pedidoId&gt;;
-  countPedidos!: Sequelize.HasManyCountAssociationsMixin;
-&nbsp;
-  static initModel(sequelize: Sequelize.Sequelize): typeof usuario {
+export class usuario extends Model&lt;usuarioAttributes, usuarioCreationAttributes&gt;<span class="fstat-no" title="function not covered" > implements usuarioAttributes {</span>
+<span class="cstat-no" title="statement not covered" >  declare id: number;</span>
+<span class="cstat-no" title="statement not covered" >  declare nombre: string;</span>
+<span class="cstat-no" title="statement not covered" >  declare email: string;</span>
+<span class="cstat-no" title="statement not covered" >  declare rol: string;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // usuario hasMany pedido via usuario_id</span>
+<span class="cstat-no" title="statement not covered" >  pedidos!: pedido[];</span>
+<span class="cstat-no" title="statement not covered" >  getPedidos!: Sequelize.HasManyGetAssociationsMixin&lt;pedido&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  setPedidos!: Sequelize.HasManySetAssociationsMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  addPedido!: Sequelize.HasManyAddAssociationMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  addPedidos!: Sequelize.HasManyAddAssociationsMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  createPedido!: Sequelize.HasManyCreateAssociationMixin&lt;pedido&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  removePedido!: Sequelize.HasManyRemoveAssociationMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  removePedidos!: Sequelize.HasManyRemoveAssociationsMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  hasPedido!: Sequelize.HasManyHasAssociationMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  hasPedidos!: Sequelize.HasManyHasAssociationsMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  countPedidos!: Sequelize.HasManyCountAssociationsMixin;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  static initModel(sequelize: Sequelize.Sequelize): typeof usuario {</span>
     return usuario.init({
     id: {
       autoIncrement: true,
@@ -308,7 +308,7 @@ export class usuario extends Model&lt;usuarioAttributes, usuarioCreationAttribut
     ]
   });
   }
-}
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -316,7 +316,7 @@ export class usuario extends Model&lt;usuarioAttributes, usuarioCreationAttribut
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-09T18:52:34.819Z
+                at 2025-10-09T22:16:11.587Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

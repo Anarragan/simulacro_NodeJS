@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">36.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>7/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">36.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>7/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,43 +88,43 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span></td><td class="text"><pre class="prettyprint lang-js">import express from 'express';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import express from 'express';
 import {router} from './usuario/usuario.routes.js';
 import {router as productoRouter} from './producto/producto.routes.js';
 import {router as pedidoRouter } from './pedido/pedido.routes.js';
 import pedidoProductoRouter from './pedido_producto/pedido_producto.routes.js';
 &nbsp;
-export const createApp = async (): Promise&lt;express.Express&gt; =&gt; {
-    const app = express();
-    app.use(express.json());
-    app.use("/usuario", router);
-    app.use("/producto", productoRouter);
-    app.use("/pedido", pedidoRouter);
-    app.use("/pedido_producto", pedidoProductoRouter);
-    app.use("/categoria", productoRouter);
-    app.use("/estado", pedidoRouter);
-    app.use("/fecha", pedidoRouter);
-    app.use("/total", pedidoProductoRouter);
-    return app;
-}</pre></td></tr></table></pre>
+export const createApp = <span class="fstat-no" title="function not covered" >async (): Promise&lt;express.Express&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const app = express();</span>
+<span class="cstat-no" title="statement not covered" >    app.use(express.json());</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/usuario", router);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/producto", productoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/pedido", pedidoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/pedido_producto", pedidoProductoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/categoria", productoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/estado", pedidoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/fecha", pedidoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    app.use("/total", pedidoProductoRouter);</span>
+<span class="cstat-no" title="statement not covered" >    return app;</span>
+<span class="cstat-no" title="statement not covered" >}</span></pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-09T18:52:34.819Z
+                at 2025-10-09T22:16:11.587Z
             </div>
         <script src="../prettify.js"></script>
         <script>

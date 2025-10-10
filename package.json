@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
+    "build": "tsc ",
     "start": "NODE_ENV=production node ./dist/server.js",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --runInBand src/__tests__/unit",

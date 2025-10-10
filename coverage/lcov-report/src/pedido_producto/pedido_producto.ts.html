@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">77.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>79/79</span>
+                <span class='fraction'>61/79</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">77.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>79/79</span>
+                <span class='fraction'>61/79</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -159,23 +159,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -220,7 +220,7 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Sequelize from 'sequelize';
 import { DataTypes, Model } from 'sequelize';
 import type { pedido, pedidoId } from '../pedido/pedido.js';
@@ -237,24 +237,24 @@ export type pedido_productoPk = "id";
 export type pedido_productoId = pedido_producto[pedido_productoPk];
 export type pedido_productoCreationAttributes = pedido_productoAttributes;
 &nbsp;
-export class pedido_producto extends Model&lt;pedido_productoAttributes, pedido_productoCreationAttributes&gt; implements pedido_productoAttributes {
-  declare id: number;
-  declare pedido_id: number;
-  declare producto_id: number;
-  declare cantidad: number;
-&nbsp;
-  // pedido_producto belongsTo pedido via pedido_id
-  pedido!: pedido;
-  getPedido!: Sequelize.BelongsToGetAssociationMixin&lt;pedido&gt;;
-  setPedido!: Sequelize.BelongsToSetAssociationMixin&lt;pedido, pedidoId&gt;;
-  createPedido!: Sequelize.BelongsToCreateAssociationMixin&lt;pedido&gt;;
-  // pedido_producto belongsTo producto via producto_id
-  producto!: producto;
-  getProducto!: Sequelize.BelongsToGetAssociationMixin&lt;producto&gt;;
-  setProducto!: Sequelize.BelongsToSetAssociationMixin&lt;producto, productoId&gt;;
-  createProducto!: Sequelize.BelongsToCreateAssociationMixin&lt;producto&gt;;
-&nbsp;
-  static initModel(sequelize: Sequelize.Sequelize): typeof pedido_producto {
+export class pedido_producto extends Model&lt;pedido_productoAttributes, pedido_productoCreationAttributes&gt;<span class="fstat-no" title="function not covered" > implements pedido_productoAttributes {</span>
+<span class="cstat-no" title="statement not covered" >  declare id: number;</span>
+<span class="cstat-no" title="statement not covered" >  declare pedido_id: number;</span>
+<span class="cstat-no" title="statement not covered" >  declare producto_id: number;</span>
+<span class="cstat-no" title="statement not covered" >  declare cantidad: number;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  // pedido_producto belongsTo pedido via pedido_id</span>
+<span class="cstat-no" title="statement not covered" >  pedido!: pedido;</span>
+<span class="cstat-no" title="statement not covered" >  getPedido!: Sequelize.BelongsToGetAssociationMixin&lt;pedido&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  setPedido!: Sequelize.BelongsToSetAssociationMixin&lt;pedido, pedidoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  createPedido!: Sequelize.BelongsToCreateAssociationMixin&lt;pedido&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  // pedido_producto belongsTo producto via producto_id</span>
+<span class="cstat-no" title="statement not covered" >  producto!: producto;</span>
+<span class="cstat-no" title="statement not covered" >  getProducto!: Sequelize.BelongsToGetAssociationMixin&lt;producto&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  setProducto!: Sequelize.BelongsToSetAssociationMixin&lt;producto, productoId&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  createProducto!: Sequelize.BelongsToCreateAssociationMixin&lt;producto&gt;;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  static initModel(sequelize: Sequelize.Sequelize): typeof pedido_producto {</span>
     return pedido_producto.init({
     id: {
       autoIncrement: true,
@@ -299,7 +299,7 @@ export class pedido_producto extends Model&lt;pedido_productoAttributes, pedido_
     ]
   });
   }
-}
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -307,7 +307,7 @@ export class pedido_producto extends Model&lt;pedido_productoAttributes, pedido_
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-09T18:52:34.819Z
+                at 2025-10-09T22:16:11.587Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

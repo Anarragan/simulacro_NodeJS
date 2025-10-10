@@ -21,6 +21,13 @@ export const sequelize = new Sequelize({
     port: Number(process.env.DB_PORT) || 5432,
     dialect: 'postgres',
     logging: false,
+
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    },
 });
 
 export const models = initModels(sequelize);

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>14/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>14/30</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,61 +100,61 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { models } from "../config/dataBase.config.js";
 import type { usuarioCreationAttributes } from "./usuario.js";
 import type { usuarioAttributes } from "../models/init-models.js";
 const { usuario } = models;
 &nbsp;
-export const getAllUsuarios = async () =&gt; {
-  const usuarios = await usuario.findAll();
-  return usuarios;
-};
+export const getAllUsuarios = <span class="fstat-no" title="function not covered" >async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  const usuarios = await usuario.findAll();</span>
+<span class="cstat-no" title="statement not covered" >  return usuarios;</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const getUsuarioById = async (id: number) =&gt; {
-  const usuarioData = await usuario.findByPk(id);
-  return usuarioData;
-};
+export const getUsuarioById = <span class="fstat-no" title="function not covered" >async (id: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  const usuarioData = await usuario.findByPk(id);</span>
+<span class="cstat-no" title="statement not covered" >  return usuarioData;</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const createUsuario = async (usuarioData: usuarioCreationAttributes) =&gt; {
-  const newUsuario = await usuario.create(usuarioData);
-  return newUsuario;
-};
+export const createUsuario = <span class="fstat-no" title="function not covered" >async (usuarioData: usuarioCreationAttributes) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  const newUsuario = await usuario.create(usuarioData);</span>
+<span class="cstat-no" title="statement not covered" >  return newUsuario;</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const updateUsuario = async (id: number, usuarioData: Partial&lt;usuarioAttributes&gt;) =&gt; {
-  return await usuario.update(usuarioData, { 
-    where: { id },
-    returning: true
-  });
-};
+export const updateUsuario = <span class="fstat-no" title="function not covered" >async (id: number, usuarioData: Partial&lt;usuarioAttributes&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  return await usuario.update(usuarioData, { </span>
+<span class="cstat-no" title="statement not covered" >    where: { id },</span>
+<span class="cstat-no" title="statement not covered" >    returning: true</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
-export const deleteUsuario = async (id: number) =&gt; {
-    return await usuario.destroy({ where: { id } });
-};
+export const deleteUsuario = <span class="fstat-no" title="function not covered" >async (id: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return await usuario.destroy({ where: { id } });</span>
+<span class="cstat-no" title="statement not covered" >};</span>
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -163,7 +163,7 @@ export const deleteUsuario = async (id: number) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-09T18:52:34.819Z
+                at 2025-10-09T22:16:11.587Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
